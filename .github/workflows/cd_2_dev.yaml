@@ -6,9 +6,16 @@ on:
       - closed
 
 jobs:
-  Deploy_on_merge:
+  Deploy:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
+
     steps:
-    - name: Deployment
-      run: /bin/bash pipelines/deploy.sh
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      - name: PreCheck
+        run: ls -alR
+
+      - name: Execute
+        run: /bin/bash pipelines/deploy.sh
