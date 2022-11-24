@@ -1,5 +1,5 @@
+#!/bin/bash
 
-
-echo The PR was merged
+echo "Deploy script"
 echo ${GITHUB_SHA}
 echo ${GITHUB_RUN_NUMBER}
