@@ -6,9 +6,9 @@ name: CI on dev or task/* branches
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "dev", "task/*" ]
+    branches: [ "dev", "task/**" ]
   pull_request:
-    branches: [ "dev", "test" ]
+    branches: [ "dev", "task/**" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
