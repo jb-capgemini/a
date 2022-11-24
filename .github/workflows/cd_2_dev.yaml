@@ -1,3 +1,5 @@
+name: CD for Dev on PR approved
+
 on:
   pull_request_target:
     types:
