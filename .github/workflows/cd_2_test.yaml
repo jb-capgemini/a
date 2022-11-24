@@ -3,7 +3,7 @@ name: CD for Test on tag
 on:
   push:
     tags:
-      - test
+      - t**
 
 jobs:
   Deploy_Test:
