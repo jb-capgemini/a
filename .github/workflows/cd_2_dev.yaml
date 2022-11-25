@@ -18,4 +18,5 @@ jobs:
         run: ls -alR
 
       - name: Execute
-        run: /bin/bash pipelines/deploy.sh
+        run: /bin/bash pipelines/deploy.sh dev
+
