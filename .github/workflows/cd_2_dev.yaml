@@ -26,6 +26,7 @@ jobs:
           ref: ${{ github.ref }}
           check-name: 'Run build script'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 200
 
       - name: Execute
         run: /bin/bash pipelines/deploy.sh dev
