@@ -27,7 +27,8 @@ jobs:
         with:
           # ref: ${{ github.ref }}
           ref: ${{ github.event.pull_request.head.sha }}
-          check-name: 'Run build script'
+          running-workflow-name: CI
+          check-name: build
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 200
 

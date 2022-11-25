@@ -34,5 +34,5 @@ jobs:
         run: env
 
       # Runs a single command using the runners shell
-      - name: Run build script
+      - name: build
         run: /bin/bash pipelines/build.sh
