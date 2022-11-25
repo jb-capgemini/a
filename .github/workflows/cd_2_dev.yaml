@@ -20,6 +20,13 @@ jobs:
           echo PR #${{ github.event.number }} has been merged
           echo Commit #${{ github.sha }} 
 
+      - name: Wait for CI
+        uses: lewagon/wait-on-check-action@v1.2.0
+        with:
+          ref: ${{ github.ref }}
+          check-name: 'Run build script'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Execute
         run: /bin/bash pipelines/deploy.sh dev
 
