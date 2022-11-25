@@ -30,7 +30,7 @@ jobs:
           running-workflow-name: CI
           check-name: build
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 200
+          wait-interval: 10
 
       - name: Execute
         run: /bin/bash pipelines/deploy.sh dev
