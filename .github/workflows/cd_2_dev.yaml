@@ -19,13 +19,16 @@ jobs:
         run:  |
           echo PR #${{ github.event.number }} has been merged
           echo Commit #${{ github.sha }} 
+          echo PR-REF: ${{ github.event.pull_request.head.sha }}
+          echo REF: ${{ github.ref }}
 
       - name: Wait for CI
         uses: lewagon/wait-on-check-action@v1.2.0
         with:
           # ref: ${{ github.ref }}
           ref: ${{ github.event.pull_request.head.sha }}
-          check-name: 'Run build script'
+          running-workflow-name: CI
+          check-name: build
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 200
 
